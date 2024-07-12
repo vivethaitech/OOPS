@@ -1,0 +1,173 @@
+
+1.Class and Object
+
+public class Book {
+	
+		String title;
+		String author;
+		int year;
+		Book(String title, String author, int year) {
+	        this.title = title;
+	        this.author = author;
+	        this.year = year;
+	    }
+		 void displayDetails() {
+		        System.out.println("Title: " + title);
+		        System.out.println("Author: " + author);
+		        System.out.println("Year Published: " + year);
+		    }
+		}
+
+public class Library {
+	
+	    public static void main(String[] args) {
+	        
+	        Book book1 = new Book("vivetha history", "poppy", 2024);
+	        Book book2 = new Book("poppy history", "vivetha", 2024);
+	        book1.displayDetails();
+	        book2.displayDetails();
+	    }
+	}
+
+2.Inheritance
+
+public class Book {
+	
+		String title;
+		String author;
+		int year;
+		Book(String title, String author, int year) {
+	        this.title = title;
+	        this.author = author;
+	        this.year = year;
+	    }
+		 void displayDetails() {
+		        System.out.println("Title: " + title);
+		        System.out.println("Author: " + author);
+		        System.out.println("Year Published: " + year);
+		    }
+		}
+
+public class Ebook extends Book{
+	String downloadlink;
+
+	Ebook(String title, String author, int year,String downloadlink) {
+		super(title, author, year);
+		this.downloadlink=downloadlink;
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Ebook ebook1 = new Ebook("vivi history","poppy",2024,"www.vivetha.com/link");
+		ebook1.displayDetails();
+
+	}
+	
+	void displayDetails() {
+		 super.displayDetails();
+	     System.out.println("downloadlink: " + downloadlink);
+	}
+
+}
+
+3.Encapsulation
+
+public class Book {
+	
+		private String title;
+		private String author;
+		private int year;
+		Book(String title, String author, int year) {
+	        this.title = title;
+	        this.author = author;
+	        this.year = year;
+	    }
+		public String getTitle() {
+			return title;
+		}
+		public void setTitle(String title) {
+			this.title = title;
+		}
+		public String getAuthor() {
+			return author;
+		}
+		public void setAuthor(String author) {
+			this.author = author;
+		}
+		public int getYear() {
+			return year;
+		}
+		public void setYear(int year) {
+			this.year = year;
+		}
+			
+  }
+
+public class Library {	
+		public static void main(String[] args) {	        
+	        Book book1 = new Book("vivetha history", "poppy", 2024);
+	        
+	        System.out.println("Accessing Field using getter method");
+	        System.out.println("The book name" +book1.getTitle());
+	        System.out.println("The book name" +book1.getAuthor());
+	        System.out.println("The book name" +book1.getYear());
+	        	        
+	        book1.setAuthor("vivetha");
+	        book1.setTitle("poppy history");
+	        book1.setYear(2023);
+		   
+	        System.out.println("modifying Field using setter method");
+	        System.out.println("The book name" +book1.getTitle());
+	        System.out.println("The book name" +book1.getAuthor());
+	        System.out.println("The book name" +book1.getYear());
+	        	 
+	}
+}
+
+4.Polymorphish
+
+public class Book {
+	
+		String title;
+		String author;
+		int year;
+		Book(String title, String author, int year) {
+	        this.title = title;
+	        this.author = author;
+	        this.year = year;
+	    }
+		 void displayDetails() {
+		        System.out.println("Title: " + title);
+		        System.out.println("Author: " + author);
+		        System.out.println("Year Published: " + year);
+		    }
+	}
+
+public class Ebook extends Book{
+	String downloadlink;
+
+	Ebook(String title, String author, int year,String downloadlink) {
+		super(title, author, year);
+		this.downloadlink=downloadlink;
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	void displayDetails() {
+		 super.displayDetails();
+	     System.out.println("downloadlink: " + downloadlink);
+	}
+
+}
+
+public class Library {	
+		public static void main(String[] args) {	        
+	     Book book = new Book("vivetha","poppy",2023);
+	     Ebook ebook = new Ebook("poppy","vivetha",2024,"vivi.com/download");
+	     System.out.println("details from Book class");
+	     book.displayDetails();
+	     System.out.println("details from Ebook class");
+	     ebook.displayDetails();
+	}
+}
