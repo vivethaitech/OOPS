@@ -20,7 +20,7 @@ public class Main {
 			int choice = sc.nextInt();
 			sc.nextLine();
 			
-			switch(choice) {
+			switch(choice) {   //whenever user enters number between 1 to 4 it will start.
 			case 1:
 				System.out.println("Enter the title of the book");
 				String title = sc.nextLine();
@@ -48,7 +48,7 @@ public class Main {
 				System.exit(0);
 				break;
 				
-			default:
+			default: //if user enters the number not between 1 to 4, it will use default case
 				System.out.println("Invalid choice! Please try again");
 			}
 		}
